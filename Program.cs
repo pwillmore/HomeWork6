@@ -120,13 +120,208 @@ OOOOOOOOOOOOOOOOOP
      0000             0000        777777777
         ";
         
+        
+        string oso1 = @"
+             /'   _        _   `\
+    /     0}      {0     \
+   
+ 
+ 
+     '._ \.' \__/ './ _.'
+jgs  /  ``'._-''-_.'``  \
+        ";
+
+        string oso2 = @"
+     .--.              .--.
+   : (\ ''. _......_ .'' /) :
+    '.    `        `    .'
+     /'   _        _   `\
+    /     0}      {0     \
+   
+ 
+ 
+     '._ \.' \__/ './ _.'
+jgs  /  ``'._-''-_.'``  \
+        ";
+        
+
+        string oso3 = @"
+     .--.              .--.
+   : (\ ''. _......_ .'' /) :
+    '.    `        `    .'
+     /'   _        _   `\
+    /     0}      {0     \
+   |       /      \       |
+   |     /'        `\     |
+    \   | .  .==.  . |   /
+     '._ \.' \__/ './ _.'
+
+jgs  /  ``'._-''-_.'``  \
+        ";
+        
+        
+        string calamardo1 = @"
+             .'      .---.      '.
+    /    .-----------.    \
+   /        .-----.        \
+   |       .-.   .-.       |
+   |      /   \ /   \      |
+    \    | .-. | .-. |    /
+ 
+ 
+ 
+ 
+ 
+             _| |_
+            /\( )/\
+           /  ` '  \
+          | |     | |
+          '-'     '-'
+          | |     | |
+          | |     | |
+          | |-----| |
+       .`/  |     | |/`.
+       |    |     |    |
+       '._.'| .-. |'._.'
+             \ | /
+             | | |
+             | | |
+             | | |
+            /| | |\
+        ";
+
+
+        string calamardo2 = @"
+            .--'''''''''--.
+     .'      .---.      '.
+    /    .-----------.    \
+   /        .-----.        \
+   |       .-.   .-.       |
+   |      /   \ /   \      |
+    \    | .-. | .-. |    /
+ 
+ 
+ 
+ 
+ 
+             _| |_
+            /\( )/\
+           /  ` '  \
+          | |     | |
+          '-'     '-'
+          | |     | |
+          | |     | |
+          | |-----| |
+       .`/  |     | |/`.
+       |    |     |    |
+       '._.'| .-. |'._.'
+             \ | /
+             | | |
+             | | |
+             | | |
+            /| | |\
+ 
+ 
+.
+      /o`.-'  / \  `-.`o\
+     /o  o\ .'   `. /o  o\
+     `.___.'       `.___.'
+        ";
+
+
+        string calamardo3 = @"
+            .--'''''''''--.
+     .'      .---.      '.
+    /    .-----------.    \
+   /        .-----.        \
+   |       .-.   .-.       |
+   |      /   \ /   \      |
+    \    | .-. | .-. |    /
+     '-._| | | | | | |_.-'
+         | '-' | '-' |
+          \___/ \___/
+       _.-'  /   \  `-._
+     .' _.--|     |--._ '.
+     ' _...-|     |-..._ '
+            |     |
+            '.___.'
+              | |
+             _| |_
+            /\( )/\
+           /  ` '  \
+          | |     | |
+          '-'     '-'
+          | |     | |
+          | |     | |
+          | |-----| |
+       .`/  |     | |/`.
+       |    |     |    |
+       '._.'| .-. |'._.'
+             \ | /
+             | | |
+             | | |
+             | | |
+            /| | |\
+          .'_| | |_`.
+LGB       `. | | | .'
+       .    /  |  \    .
+      /o`.-'  / \  `-.`o\
+     /o  o\ .'   `. /o  o\
+     `.___.'       `.___.'
+        ";
+
+
+
+        //--------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------
+        //Configuraciones iniciales
+        
         Console.WriteLine("Bienvenido al juego de adivinanzas de logotipos");
         Console.WriteLine("Cada respuesta correcta vale 4 puntos en el primer intento, de lo contrario ganarás 2 puntos.");
+        Console.WriteLine("Presione cualquier boton para continuar");
         Console.WriteLine();
-        
+        Console.ReadKey();
+
         int puntos = 0;
 
-        Console.WriteLine("Adivina el primer logotipo:");
+        //---------------------------------------------------------------------------------------------------------------------
+        //Crear aletoriedad
+        
+        Random rnd = new Random();
+        int seleccion, a=0,b=0,x=0;
+
+        while (x < 3)
+        {
+
+            seleccion = rnd.Next(1,5);
+
+            while (seleccion == a || seleccion == b)
+            {
+            seleccion = rnd.Next(1,5);
+            }        
+        
+        if(x == 0)
+        {
+            a = seleccion;
+        }
+
+        if(x == 1)
+        {
+            b = seleccion;
+        }
+        
+        x += 1;
+
+
+        //---------------------------------------------------------------------------------------------------------------
+        //Inicio del juego
+
+        switch(seleccion)
+        {
+
+        case 1:
+
+        Console.WriteLine("Adivina el logotipo:");
         Console.WriteLine(playBoy1);
         string respuesta = Console.ReadLine();
 
@@ -148,7 +343,20 @@ OOOOOOOOOOOOOOOOOP
                 Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
                 Console.WriteLine(playBoy3);
             }
+            else
+            {
+                
+                Console.WriteLine("Respuesta incorrecta.");
+                Console.WriteLine(playBoy3);
+                Console.WriteLine("La respuesta correcta es 'Play Boy'");
+            }
         }
+
+        Console.ReadKey();
+        break;
+
+
+        case 2:
 
         Console.WriteLine();
         Console.WriteLine("Adivina el segundo logotipo:");
@@ -173,6 +381,100 @@ OOOOOOOOOOOOOOOOOP
                 Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
                 Console.WriteLine(jamesBond3);
             }
+             else
+            {
+                
+                Console.WriteLine("Respuesta incorrecta.");
+                Console.WriteLine(playBoy3);
+                Console.WriteLine("La respuesta correcta es 'James Bond'");
+            }
+        }
+
+        Console.ReadKey();
+        break;
+
+
+        case 3:
+
+        Console.WriteLine();
+        Console.WriteLine("Adivina el personaje de caricatura:");
+        Console.WriteLine(calamardo1);
+        respuesta = Console.ReadLine();
+
+        if (respuesta == "Calamardo")
+        {
+            puntos += 4;
+            Console.WriteLine("¡Respuesta correcta! Has ganado 4 puntos.");
+            Console.WriteLine(calamardo3);
+        }
+        else
+        {
+            Console.WriteLine("Respuesta incorrecta. Inténtalo nuevamente.");
+            Console.WriteLine(calamardo2);
+            respuesta = Console.ReadLine();
+
+            if (respuesta == "Calamardo")
+            {
+                puntos += 2;
+                Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
+                Console.WriteLine(calamardo3);
+            }
+             else
+            {
+                
+                Console.WriteLine("Respuesta incorrecta.");
+                Console.WriteLine(calamardo3);
+                Console.WriteLine("La respuesta correcta es 'Calamardo'");
+            }
+        }
+
+        Console.ReadKey();
+        break;
+
+
+        case 4:
+
+        Console.WriteLine();
+        Console.WriteLine("Adivina el animal:");
+        Console.WriteLine(oso1);
+        respuesta = Console.ReadLine();
+
+        if (respuesta == "Oso")
+        {
+            puntos += 4;
+            Console.WriteLine("¡Respuesta correcta! Has ganado 4 puntos.");
+            Console.WriteLine(oso3);
+        }
+        else
+        {
+            Console.WriteLine("Respuesta incorrecta. Inténtalo nuevamente.");
+            Console.WriteLine(oso2);
+            respuesta = Console.ReadLine();
+
+            if (respuesta == "Oso")
+            {
+                puntos += 2;
+                Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
+                Console.WriteLine(oso3);
+            }
+             else
+            {
+                
+                Console.WriteLine("Respuesta incorrecta.");
+                Console.WriteLine(oso3);
+                Console.WriteLine("La respuesta correcta es 'Oso'");
+            }
+        }
+
+        Console.ReadKey();
+        break;
+
+
+
+
+
+        }
+
         }
 
         Console.WriteLine();
@@ -182,7 +484,6 @@ OOOOOOOOOOOOOOOOOP
 
     }
 }
-
 
 
 
