@@ -122,7 +122,6 @@ OOOOOOOOOOOOOOOOOP
 
 
 
-//Declaracion de los personajes
         string Bobeponga1 = @"
         
     | o  |    \_      \     |     -.   .-.
