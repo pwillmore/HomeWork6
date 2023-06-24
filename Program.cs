@@ -421,12 +421,77 @@ LGB       `. | | | .'
      `.___.'       `.___.'
         ";
 
+string zelda1 = @"
+     |          /H\          .----    /
+  |         |H#/'.           `    /
+  |          \| | '..            /
+  |    ^~DLF   /|    ''..______.'
+   \          //\__    _..-. | 
+    \         ||   ````     \ |_
+     \    _.-|               \| |_
+     _\_.-'   `'''''-.        |   `--.
+ ''``    \            `''-;    \ /
+          \      .-'|     ````.' -
+          |    .'  `--'''''-.. |/
+          |  .'               \|
+          |.'";
+
+        string zelda2 = @"
+           _______
+         ..-'`       ````---.
+       .'          ___ .'````.'SS'.
+      /        ..-SS####'.  /SSHH##'.
+     |       .'SSSHHHH##|/#/#HH#H####'.
+    /      .'SSHHHHH####/||#/: \SHH#####\
+   /      /SSHHHHH#####/!||;`___|SSHH###\
+-..__    /SSSHHH######.         \SSSHH###\
+`.'-.''--._SHHH#####.'           '.SH####/
+  '. ``'-  '/SH####`/_             `|H##/
+  | '.     /SSHH###|`'==.       .=='/\H|
+  |   `'-.|SHHHH##/\__\/        /\//|~|/
+  |    |S#|/HHH##/             |``  |
+  |    \H' |H#.'`              \    |
+  |        ''`|   ";
+
+  string zelda3 = @"
+        _______
+         ..-'`       ````---.
+       .'          ___ .'````.'SS'.
+      /        ..-SS####'.  /SSHH##'.
+     |       .'SSSHHHH##|/#/#HH#H####'.
+    /      .'SSHHHHH####/||#/: \SHH#####\
+   /      /SSHHHHH#####/!||;`___|SSHH###\
+-..__    /SSSHHH######.         \SSSHH###\
+`.'-.''--._SHHH#####.'           '.SH####/
+  '. ``'-  '/SH####`/_             `|H##/
+  | '.     /SSHH###|`'==.       .=='/\H|
+  |   `'-.|SHHHH##/\__\/        /\//|~|/
+  |    |S#|/HHH##/             |``  |
+  |    \H' |H#.'`              \    |
+  |        ''`|               -     /
+  |          /H\          .----    /
+  |         |H#/'.           `    /
+  |          \| | '..            /
+  |    ^~DLF   /|    ''..______.'
+   \          //\__    _..-. | 
+    \         ||   ````     \ |_
+     \    _.-|               \| |_
+     _\_.-'   `'''''-.        |   `--.
+ ''``    \            `''-;    \ /
+          \      .-'|     ````.' -
+          |    .'  `--'''''-.. |/
+          |  .'               \|
+          |.'
+";
+
+
+
 
 
         //--------------------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------------------
         //Configuraciones iniciales
-        
+
         Console.WriteLine("Bienvenido al juego de adivinanzas de logotipos");
         Console.WriteLine("Cada respuesta correcta vale 4 puntos en el primer intento, de lo contrario ganarás 2 puntos.");
 
@@ -442,16 +507,16 @@ LGB       `. | | | .'
         //Crear aletoriedad
         
         Random rnd = new Random();
-        int seleccion, x=0,a=0,b=0,d=0,e=0,c=0,f=0;
+        int seleccion, x=0,a=0,b=0,c=0,d=0,e=0,f=0,g=0;
 
-        while (x < 7)
+        while (x < 8)
         {
 
-            seleccion = rnd.Next(1,7);
+            seleccion = rnd.Next(1,8);
 
-            while (seleccion == a || seleccion == b || seleccion == c || seleccion == d || seleccion == e || seleccion == f)
+            while (seleccion == a || seleccion == b || seleccion == c || seleccion == d || seleccion == e || seleccion == f || seleccion == g)
             {
-            seleccion = rnd.Next(1,7);
+            seleccion = rnd.Next(1,8);
             }        
         
         if(x == 0)
@@ -478,11 +543,12 @@ LGB       `. | | | .'
         {
             f = seleccion;
         }
+        else if (x == 6)
+        {
+            g = seleccion;
+        }
 
-        // if(x == 1)
-        // {
-        //     b = seleccion;
-        // }
+       
         
         x += 1;
 
@@ -499,7 +565,7 @@ LGB       `. | | | .'
                     Console.WriteLine(playBoy1);
                     string respuesta = Console.ReadLine()!;
 
-                    if (respuesta == "Play boy")
+                    if (respuesta == "Play Boy")
                     {
                         puntos += 4;
                         Console.WriteLine("¡Respuesta correcta! Has ganado 4 puntos.");
@@ -511,7 +577,7 @@ LGB       `. | | | .'
                         Console.WriteLine(playBoy2);
                         respuesta = Console.ReadLine()!;
 
-                        if (respuesta == "Play boy")
+                        if (respuesta == "Play Boy")
                         {
                             puntos += 2;
                             Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
@@ -690,7 +756,7 @@ LGB       `. | | | .'
                     {
                         puntos += 4;
                         Console.WriteLine("¡Respuesta correcta! Has ganado 4 puntos.");
-                        Console.WriteLine(Bobeponga1);
+                        Console.WriteLine(Bobeponga3);
                     }
                     else
                     {
@@ -703,6 +769,45 @@ LGB       `. | | | .'
                             puntos += 2;
                             Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
                             Console.WriteLine(Bobeponga3);
+                        }
+                        else
+                        {
+
+                            Console.WriteLine("Respuesta incorrecta.");
+                            Console.WriteLine(Bobeponga3);
+                            Console.WriteLine("La respuesta correcta es 'Bob esponja");
+                        }
+                    }
+
+                    Console.ReadKey();
+                    break;
+                
+                
+
+                case 7:
+
+                    Console.WriteLine();
+                    Console.WriteLine("Adivina el Personaje:");
+                    Console.WriteLine(zelda1);
+                    respuesta = Console.ReadLine()!;
+
+                    if (respuesta == "Zelda")
+                    {
+                        puntos += 4;
+                        Console.WriteLine("¡Respuesta correcta! Has ganado 4 puntos.");
+                        Console.WriteLine(zelda3);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Respuesta incorrecta. Inténtalo nuevamente.");
+                        Console.WriteLine(zelda2);
+                        respuesta = Console.ReadLine()!;
+
+                        if (respuesta == "Zelda")
+                        {
+                            puntos += 2;
+                            Console.WriteLine("¡Respuesta correcta! Has ganado 2 puntos.");
+                            Console.WriteLine(zelda3);
                         }
                         else
                         {
