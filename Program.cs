@@ -721,7 +721,7 @@ ______ _                           _     _               _               _      
 
                     Console.WriteLine();
                     Console.WriteLine("Adivina la personaje:");
-                    Console.WriteLine();
+                    Console.WriteLine(Correcamino1);
                     respuesta = Console.ReadLine()!;
 
                     if (respuesta == "Correcaminos")
@@ -747,7 +747,7 @@ ______ _                           _     _               _               _      
 
                             Console.WriteLine("Respuesta incorrecta.");
                             Console.WriteLine(Correcamino3);
-                            Console.WriteLine("La respuesta correcta es 'Oso'");
+                            Console.WriteLine("La respuesta correcta es 'Correcaminos'");
                         }
                     }
                     Console.ReadKey();
